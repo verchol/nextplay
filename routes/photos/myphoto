@@ -1,0 +1,4 @@
+function (err){
+    console.log("thanks for sending photo:" + photo);
+    res.send("photo saved");
+  }
