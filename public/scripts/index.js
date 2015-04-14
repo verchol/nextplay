@@ -91,11 +91,11 @@ $(function() {
 
     $('.js-person-photo').attr('src', photo);
 
-    $('.js-person-back-btn')
+    $('.js-person-save-btn')
       .off('click', onClickPersonBackBtn)
       .on('click', onClickPersonBackBtn);
 
-    $('.js-person-save-btn')
+    $('.js-person-back-btn')
       .off('click', onClickPersonSaveBtn)
       .on('click', onClickPersonSaveBtn);
   }
