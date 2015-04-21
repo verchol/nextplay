@@ -20,10 +20,31 @@ $(function() {
   }
 
   function onTakePhoto() {
-    photo = 'data:image/png;base64,' + $.scriptcam.getFrameAsBase64();
-
-    $camera.addClass('hidden');
-    shopPersonPage();
+    $('.js-take-photo-btn')
+      .html('3')
+      .delay(800)
+      .queue(function(next) {
+        $(this).html('2');
+        next();
+      })
+      .delay(800)
+      .queue(function(next) {
+        $(this).html('1');
+        next();
+      })
+      .delay(800)
+      .queue(function(next) {
+        $(this).html('0');
+        next();
+      })
+      .delay(800)
+      .queue(function(next) {
+        photo = 'data:image/png;base64,' + $.scriptcam.getFrameAsBase64();
+        $camera.addClass('hidden');
+        shopPersonPage();
+        $('.js-take-photo-btn').html('Take photo');
+        next();
+      });
   }
 
   function onClickPersonBackBtn() {
