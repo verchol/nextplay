@@ -179,3 +179,19 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
 }
+
+.photo-list {
+  max-width: 90%;
+  min-width: 400px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  list-style-type: none;
+}
+
+.photo-list--item {
+  display: inline-block;
+
+  margin: 10px;
+}

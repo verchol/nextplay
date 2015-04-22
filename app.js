@@ -1,14 +1,15 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
+var express      = require('express');
+var path         = require('path');
+var favicon      = require('serve-favicon');
+var logger       = require('morgan');
 var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var multer = require('multer');
-var routes = require('./routes/index');
-var users = require('./routes/users');
-var trivia = require('./routes/photos');
-var moment = require('moment');
+var bodyParser   = require('body-parser');
+var multer       = require('multer');
+var routes       = require('./routes/index');
+var users        = require('./routes/users');
+var trivia       = require('./routes/photos');
+var config       = require('./config');
+var moment       = require('moment');
 
 function getDate(){
   var d = moment();
@@ -30,32 +31,34 @@ app.use(multer({ dest: './uploads/',
      req.connection.remoteAddress ||
      req.socket.remoteAddress ||
      req.connection.socket.remoteAddress;
+   var remoteIp = ip.split(':');
 
-    var remoteIp = ip.split(':');
-    ip = remoteIp[remoteIp.length - 1];
-    var ip = ip.split('.').join('_');
-    console.log("remote ip" + remoteIp[remoteIp.length - 1]);
+   ip = remoteIp[remoteIp.length - 1];
+   ip = ip.split('.').join('_');
 
-    console.log("renaming " + filename + ",ip:" + ip);
-    return filename + ip + getDate()+ ".png";
+   console.log('remote ip' + remoteIp[remoteIp.length - 1]);
+   console.log('renaming ' + filename + ',ip:' + ip);
+
+   return filename + ip + getDate()+ ".png";
   },
-onFileUploadStart: function (file) {
-  console.log(file.originalname + ' is starting ...')
-},
-onFileUploadComplete: function (file) {
-  console.log(file.fieldname + ' uploaded to  ' + file.path)
-  done=true;
-}
+  onFileUploadStart: function(file) {
+    console.log(file.originalname + ' is starting ...');
+  },
+  onFileUploadComplete: function(file) {
+    console.log(file.fieldname + ' uploaded to  ' + file.path);
+    done=true;
+  }
 }));
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
-app.use(bodyParser.json({limit: '50mb'}));
-app.use(bodyParser.urlencoded({extended: false, limit: '50mb'}));
- app.use(cookieParser());
+app.use(bodyParser.json({ limit: '50mb' }));
+app.use(bodyParser.urlencoded({ extended: false, limit: '50mb' }));
+app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public', 'static')));
+app.use(express.static(path.join(__dirname, config.photoLib)));
 app.use('/', routes);
 app.use('/trivia', trivia);
 app.use('/users', users);

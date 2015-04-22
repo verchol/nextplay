@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  div.page
+    ul.photo-list
+      - each photo in photos
+        li.photo-list--item
+          img(src= "/" + photo, width=160, height=200)
