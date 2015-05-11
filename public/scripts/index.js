@@ -29,12 +29,12 @@ $(function() {
         $('.js-flash').addClass('active');
         next();
       })
-      .delay(200)
+      .delay(150)
       .queue(function(next) {
         $('.js-light').addClass('active');
         next();
       })
-      .delay(200)
+      .delay(300)
       .queue(function(next) {
         $('.js-flash').removeClass('active');
         $('.js-light').removeClass('active');
