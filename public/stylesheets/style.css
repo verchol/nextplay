@@ -29,6 +29,20 @@ body {
   vertical-align: middle;
 }
 
+.page::after {
+    content: '';
+    display: block;
+
+    position: absolute;
+    right: 60px;
+    bottom: 50px;
+
+    width: 60px;
+    height: 69px;
+
+    background-image: url('/images/logo.png');
+}
+
 .person--content {
   display: table;
 
@@ -146,6 +160,11 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
 }
+
+.page--thanks::after {
+    background-image: none;
+}
+
 
 .photo-list {
   max-width: 90%;
