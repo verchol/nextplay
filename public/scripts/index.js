@@ -1,23 +1,10 @@
 $(function() {
   'use strict';
 
-  var $greatings = $('.js-page-greatings');
   var $camera = $('.js-page-camera');
   var $person = $('.js-page-person');
   var $thanks = $('.js-page-thanks');
   var photo;
-
-  function init() {
-    $greatings
-      .removeClass('hidden')
-      .addClass('animated fadeOut')
-      .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', onInit);
-  }
-
-  function onInit() {
-    $greatings.addClass('hidden');
-    showCameraPage();
-  }
 
   function onTakePhoto() {
     $('.js-take-photo-btn')
@@ -93,5 +80,5 @@ $(function() {
     cornerRadius        : 0
   });
 
-  setTimeout(init, 3000);
+  showCameraPage();
 });

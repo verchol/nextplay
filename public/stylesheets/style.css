@@ -29,39 +29,6 @@ body {
   vertical-align: middle;
 }
 
-.logo {
-  width: 222px;
-  height: 301px;
-
-  margin: 80px auto 0;
-
-  background-image: url('/images/logo.png');
-}
-
-.divider {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  margin-left: auto;
-  margin-right: auto;
-
-  width: 80px;
-
-  border: 1px solid #d2d2d2;
-}
-
-.text p {
-  margin: 4px 0;
-
-  font-size: 28px;
-  line-height: 1.1em;
-  text-align: center;
-  text-shadow: 2px 2px 2px rgba(150, 150, 150, 1);
-}
-
-.text--grey {
-  color: #595858;
-}
-
 .person--content {
   display: table;
 
