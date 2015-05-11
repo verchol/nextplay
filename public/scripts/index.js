@@ -24,7 +24,23 @@ $(function() {
         $(this).html('0');
         next();
       })
-      .delay(800)
+      .delay(100)
+      .queue(function(next) {
+        $('.js-flash').addClass('active');
+        next();
+      })
+      .delay(200)
+      .queue(function(next) {
+        $('.js-light').addClass('active');
+        next();
+      })
+      .delay(200)
+      .queue(function(next) {
+        $('.js-flash').removeClass('active');
+        $('.js-light').removeClass('active');
+        next();
+      })
+      .delay(300)
       .queue(function(next) {
         photo = 'data:image/png;base64,' + $.scriptcam.getFrameAsBase64();
         $camera.addClass('hidden');
