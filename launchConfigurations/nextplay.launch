@@ -1,0 +1,14 @@
+{
+  "ServiceId": "io.codefresh.orion.client.node.runner",
+  "Params": {
+    "Target": {
+      "Node": "node",
+      "NodeParams": "",
+      "WorkDir": "./",
+      "JSFile": "app.js",
+      "AppParameters": ""
+    },
+    "Name": "nextplay"
+  },
+  "Type": "NodeRunner"
+}
