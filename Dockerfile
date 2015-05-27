@@ -7,6 +7,7 @@ FROM dockerfile/nodejs
 COPY . /src
 WORKDIR /src
 #COPY ./start.sh /run/start.sh
+RUN npm install -g bower grunt-cli
 RUN npm install
 RUN bower install --allow-root ---config.interactive=false
 #CMD [ "sh", "../start.sh" ]
