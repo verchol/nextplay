@@ -5,6 +5,7 @@ var path       = require('path');
 var filewalker = require('filewalker');
 var router     = express.Router();
 
+
 /* GET home page. */
 router.get('/trivia', photos);
 

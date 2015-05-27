@@ -1,0 +1,14 @@
+{
+  "ServiceId": "io.codefresh.orion.client.node.runner",
+  "Params": {
+    "Target": {
+      "Node": "/bin/bash",
+      "NodeParams": "",
+      "WorkDir": "/workdir/verchol/nextplay",
+      "JSFile": "/workdir/verchol/autostart.sh",
+      "AppParameters": ""
+    },
+    "Name": "autostart"
+  },
+  "Type": "NodeRunner"
+}
