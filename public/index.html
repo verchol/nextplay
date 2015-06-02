@@ -1,37 +1,58 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=10" >
+    <meta http-equiv="X-UA-Compatible" content="IE=10">
     <title>Trivia</title>
-    <link href="../bower_components/animate.css/animate.min.css" rel="stylesheet" type="text/css" />
-    <link href="../bower_components/cropper/dist/cropper.min.css" rel="stylesheet" type="text/css" />
-    <link href="/stylesheets/style.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-    <div class="page page--camera hidden js-page-camera">
-      <div id="js-camera"></div>
-      <button class="button button__take-photo js-take-photo-btn">צלם תמונה</button>
-      <div class="light js-light"></div>
-      <span class="flash js-flash"></span>
-    </div>
+    <link href="../bower_components/animate.css/animate.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../bower_components/cropper/dist/cropper.min.css" rel="stylesheet" type="text/css"/>
+    <link href="/stylesheets/style.css" rel="stylesheet" type="text/css"/>
+    <link href="/stylesheets/ui-style.css" rel="stylesheet" type="text/css"/>
+    <!--[if IE]>
+    <link href="/stylesheets/stupid-ie.css" rel="stylesheet" type="text/css"/>
+    <![endif]-->
+</head>
+<body>
 
-    <div class="page page--person hidden js-page-person">
-      <div class="person--content">
+<div class="content js-page-camera hidden">
+    <div class="image" id="camera-area">
+        <div id="js-camera"></div>
+        <div class="camera-hover"></div>
+    </div>
+    <div class="actions">
+        <button class="button button__take-photo js-take-photo-btn">צלם תמונה</button>
+        <div class="light js-light"></div>
+        <span class="flash js-flash"></span>
+    </div>
+</div>
+
+<div class="content js-page-person hidden">
+    <div class="image image-after">
         <img src="" class="person-image js-person-photo">
-        <div class="person-buttons">
-          <button class="button js-person-back-btn">אהבתי</button>
-          <button class="button js-person-save-btn">צלם שוב</button>
-        </div>
-      </div>
-    </div>
 
-    <div class="page page--thanks hidden js-page-thanks">
+        <div class="camera-hover"></div>
     </div>
+    <div class="actions">
+        <button class="button js-person-back-btn">אהבתי</button>
+        <button class="button js-person-save-btn">צלם שוב</button>
+    </div>
+</div>
 
-    <script src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
-    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="../scripts/scriptcam/scriptcam.js"></script>
-    <script src="../scripts/index.js"></script>
-  </body>
+<div class="content hidden js-page-thanks page--thanks">
+
+</div>
+
+<script>
+    var ieBrowser = false;
+</script>
+<!--[if IE]>
+<script>
+    ieBrowser = true;
+</script>
+<![endif]-->
+<script src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../scripts/scriptcam/scriptcam.js"></script>
+<script src="../scripts/index.js"></script>
+</body>
 </html>

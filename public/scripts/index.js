@@ -29,12 +29,12 @@ $(function() {
         $('.js-flash').addClass('active');
         next();
       })
-      .delay(150)
+      .delay(110)
       .queue(function(next) {
         $('.js-light').addClass('active');
         next();
       })
-      .delay(300)
+      .delay(130)
       .queue(function(next) {
         $('.js-flash').removeClass('active');
         $('.js-light').removeClass('active');
@@ -45,7 +45,7 @@ $(function() {
         photo = 'data:image/png;base64,' + $.scriptcam.getFrameAsBase64();
         $camera.addClass('hidden');
         shopPersonPage();
-        $('.js-take-photo-btn').html('Take photo');
+        $('.js-take-photo-btn').text('צלם תמונה');
         next();
       });
   }
@@ -68,10 +68,13 @@ $(function() {
     $camera.removeClass('hidden');
 
     $('.js-take-photo-btn').off('click', onTakePhoto).on('click', onTakePhoto);
+
   }
 
   function shopPersonPage() {
     $person.removeClass('hidden');
+
+    console.log(photo);
 
     $('.js-person-photo').attr('src', photo);
 
@@ -90,8 +93,8 @@ $(function() {
 
   $('#js-camera').scriptcam({
     path                : '../scripts/scriptcam/',
-    width               : 400,
-    height              : 500,
+    width               : 600,
+    height              : 600,
     showMicrophoneErrors: false,
     cornerRadius        : 0
   });

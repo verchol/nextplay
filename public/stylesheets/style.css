@@ -121,11 +121,9 @@ body {
 }
 
 .button__take-photo {
-  width: initial;
-  max-width: none;
 
-  margin-left: auto;
-  margin-right: auto;
+
+
 }
 
 .crop-wrapper {
@@ -161,9 +159,9 @@ body {
   background-position: center center;
 }
 
-.page--thanks::after {
-    background-image: none;
-}
+/*.page--thanks::after {*/
+    /*background-image: none;*/
+/*}*/
 
 
 .photo-list {
@@ -230,10 +228,10 @@ body {
     opacity: 0;
     z-index: -1;
 
-    -webkit-transition: all .1s ease-in-out;
-       -moz-transition: all .1s ease-in-out;
-        -ms-transition: all .1s ease-in-out;
-            transition: all .1s ease-in-out;
+    -webkit-transition: all 100ms ease-out;
+       -moz-transition: all 100ms ease-out;
+        -ms-transition: all 100ms ease-out;
+            transition: all 100ms ease-out;
 }
 
 .flash.active {

@@ -92,6 +92,11 @@
 					allowScriptAccess: 'always',
 					allowFullScreen: 'true'
 				};
+
+				if(ieBrowser) {
+					params.wmode = 'opaque';
+				}
+
 			};
 			// Escape all values contained in the flashVars (IE needs this)
 			for (var key in opts) {
