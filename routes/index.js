@@ -15,11 +15,12 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/userphoto/:ip', function(req, res, next) {
-	var ip = req.params.ip;
+	var ip = req.params.ip.split(".png")[0];
 	var photoDir = path.resolve(config.photoLib || __dirname);
 	var photoPath = path.resolve((config.photoLib || __dirname), './photos', ip + '.png');
-	var defaultPhoto = path.resolve((config.photoLib || __dirname), './photos', 'default.png');
+	var defaultPhoto = path.resolve(('./routes' || __dirname), './default', 'default.png');
 	
+	res.setHeader('Cache-Control', 'public, max-age=0');
 	if (fs.existsSync(photoPath)) {
 		res.sendFile(photoPath);
 	}
