@@ -10,8 +10,8 @@ div {
 .content {
     position:absolute;
     top:50%;
-    margin-top:-300px;
-    height: 600px;
+    margin-top:-225px;
+    height: 450px;
     border: 0px solid black;
     width: 100%;
     display: block;
@@ -26,14 +26,14 @@ div {
     height:100%;
     width:20%;
     float:left;
-    padding:170px 0px;
+    padding:120px 0px;
 }
 
 .camera-hover {
     position: absolute;
     z-index:10;
-    height: 600px;
-    width: 600px;
+    height: 450px;
+    width: 450px;
     right:0px;
     top:0px;
 
@@ -47,17 +47,16 @@ div {
     right:0px;
     top:0px;
     margin-right: 0px;
-    width: 600px;
-    height: 600px;
+    width: 450px;
+    height: 450px;
     z-index:5;
 }
 
 .person-image {
     display: block;
-    height:600px;
-    width:600px;
+    height:450px;
+    width:450px;
     float:right;
-
 }
 
 .image-after {

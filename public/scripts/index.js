@@ -93,8 +93,8 @@ $(function() {
 
   $('#js-camera').scriptcam({
     path                : '../scripts/scriptcam/',
-    width               : 600,
-    height              : 600,
+    width               : 450,
+    height              : 450,
     showMicrophoneErrors: false,
     cornerRadius        : 0
   });
