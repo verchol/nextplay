@@ -8,16 +8,16 @@
     <link href="../bower_components/cropper/dist/cropper.min.css" rel="stylesheet" type="text/css"/>
     <link href="/stylesheets/style.css" rel="stylesheet" type="text/css"/>
     <link href="/stylesheets/ui-style.css" rel="stylesheet" type="text/css"/>
-    <!--[if IE]>
+    
     <link href="/stylesheets/stupid-ie.css" rel="stylesheet" type="text/css"/>
-    <![endif]-->
+    
 </head>
 <body>
 
 <div class="content js-page-camera hidden">
     <div class="image" id="camera-area">
         <div id="js-camera"></div>
-        <div class="camera-hover"></div>
+        <!--<div class="camera-hover"></div>-->
     </div>
     <div class="actions">
         <button class="button button__take-photo js-take-photo-btn">צלם תמונה</button>
@@ -30,7 +30,7 @@
     <div class="image image-after">
         <img src="" class="person-image js-person-photo">
 
-        <div class="camera-hover"></div>
+        <!--<div class="camera-hover"></div>-->
     </div>
     <div class="actions">
         <button class="button js-person-back-btn">אהבתי</button>
@@ -45,7 +45,7 @@
 <script>
     var ieBrowser = false;
 </script>
-<!--[if IE]>
+<!--[if lt IE 10]>
 <script>
     ieBrowser = true;
 </script>
