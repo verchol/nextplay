@@ -17,7 +17,7 @@ function rename(req, res)
 
    ip = remoteIp[remoteIp.length - 1];
    var ips = ip.split('.');
-   ip = 'user_' + ips[ips.length - 1];
+   ip = ips[ips.length - 1];
 
    console.log('remote ip' + remoteIp[remoteIp.length - 1]);
    console.log("ip:" + ip);
@@ -29,17 +29,17 @@ function rename(req, res)
 
 router.post('/photo', function(req, res, next) {
   var photo = req.body.photo.replace(/^data:image\/png;base64,/, '');
- 
-
-  console.log('saving into :' + photoPath);
+  
   var ip  = rename(req, res);
   //var photoPath = path.resolve((config.photoLib || __dirname), './photos', Date.now().toString() + '.png');
   var photoPath = path.resolve((config.photoLib || __dirname), './photos', ip + '.png');
+  
+  console.log('saving into :' + photoPath);
+  
   fs.writeFile(photoPath, photo, 'base64', function(err) {
     if (!err) {
     	
     	// resize img
-    	
     	im.resize({
 		  srcPath: photoPath,
 		  dstPath: photoPath,
@@ -47,6 +47,7 @@ router.post('/photo', function(req, res, next) {
 		  height: config.userImg.height,
 		}, function(err, stdout, stderr){
 		  if (err) {
+			  console.log('resize error...');
 		  	res.send(photoPath + ' || Error: ' + err);
 		  }
 		  else {

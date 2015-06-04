@@ -2,6 +2,7 @@ var express    = require('express');
 var photos     = require('./photos');
 var config     = require('../config');
 var path       = require('path');
+var fs         = require('fs');
 var filewalker = require('filewalker');
 var router     = express.Router();
 
@@ -11,6 +12,22 @@ router.get('/trivia', photos);
 
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
+});
+
+router.get('/userphoto/:ip', function(req, res, next) {
+	var ip = req.params.ip;
+	var photoDir = path.resolve(config.photoLib || __dirname);
+	var photoPath = path.resolve((config.photoLib || __dirname), './photos', ip + '.png');
+	var defaultPhoto = path.resolve((config.photoLib || __dirname), './photos', 'default.png');
+	
+	if (fs.existsSync(photoPath)) {
+		res.sendFile(photoPath);
+	}
+	else {
+		res.sendFile(defaultPhoto);
+	}	
+
+	
 });
 
 router.get('/admin/photos', function(req, res) {
