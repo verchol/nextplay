@@ -3,6 +3,7 @@ var path    = require('path');
 var fs      = require('fs');
 var config  = require('../config');
 var router  = express.Router();
+var im = require('imagemagick');
 
 
 
@@ -36,8 +37,26 @@ router.post('/photo', function(req, res, next) {
   var photoPath = path.resolve((config.photoLib || __dirname), './photos', ip + '.png');
   fs.writeFile(photoPath, photo, 'base64', function(err) {
     if (!err) {
-      console.log('photo posted');
-      res.send('ok');
+    	
+    	// resize img
+    	
+    	im.resize({
+		  srcPath: photoPath,
+		  dstPath: photoPath,
+		  width: config.userImg.width,
+		  height: config.userImg.height,
+		}, function(err, stdout, stderr){
+		  if (err) {
+		  	res.send(photoPath + ' || Error: ' + err);
+		  }
+		  else {
+	
+		  	res.send('ok');
+		  }
+		});
+		
+		
+      
     } else {
       console.log(err);
     }
