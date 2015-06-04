@@ -8,6 +8,7 @@ var multer       = require('multer');
 var routes       = require('./routes/index');
 var users        = require('./routes/users');
 var trivia       = require('./routes/photos');
+var imgman    	 = require('./routes/imgman');
 var config       = require('./config');
 var moment       = require('moment');
 
@@ -62,6 +63,7 @@ app.use(express.static(path.join(__dirname, config.photoLib)));
 app.use('/', routes);
 app.use('/trivia', trivia);
 app.use('/users', users);
+app.use('/imgman', imgman);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
