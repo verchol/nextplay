@@ -16,7 +16,7 @@ function rename(req, res)
 
    ip = remoteIp[remoteIp.length - 1];
    var ips = ip.split('.');
-   ip = 'user_' + ips[ips.length - 1];
+   ip = ips[ips.length - 1];
 
    console.log('remote ip' + remoteIp[remoteIp.length - 1]);
    console.log("ip:" + ip);
@@ -58,8 +58,15 @@ router.get('/', function(req, res, next) {
 router.get('/clean', function(req, res, next) {
 	var ip  = rename(req, res);
 	var photoPath = path.resolve((config.photoLib || __dirname), './photos', ip + '.png');
-	fs.unlink(photoPath);
-	res.send(photoPath + " deleted");
+	
+	if (fs.existsSync(photoPath)) {
+		fs.unlink(photoPath);
+		res.send(photoPath + " deleted");
+	}
+	else {
+		res.send(photoPath + ' dose not exist');
+	}	
+
 });
 
 router.get('/reaize', function(req, res, next) {

@@ -65,6 +65,9 @@ $(function() {
   }
 
   function showCameraPage() {
+	  
+	$.get('/imgman/clean');
+	  
     $camera.removeClass('hidden');
 
     $('.js-take-photo-btn').off('click', onTakePhoto).on('click', onTakePhoto);
