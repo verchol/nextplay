@@ -17,5 +17,5 @@ RUN npm install -g bower
 COPY . /src
 RUN bower install --allow-root
 
-EXPOSE  8080
+EXPOSE  9000
 CMD ["node", "/src/bin/www"]
