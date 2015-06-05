@@ -1,6 +1,6 @@
 var config = {};
 
-config.photoLib = process.env.PHOTO_LIB  || './routes';
+config.photoLib = process.env.PHOTO_LIB  || 'd:/Photos';
 
 config.log = function() {
   console.log('config:' + this.photoLib);
