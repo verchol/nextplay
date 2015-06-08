@@ -10,23 +10,20 @@ div {
 .content {
     position:absolute;
     top:50%;
-    margin-top:-225px;
-    height: 450px;
+    margin-top:-265px;
+    height: 530px;
     border: 0px solid black;
     width: 100%;
     display: block;
 }
 
 .content .image {
-    height:100%;
-    width:60%;
-    float:left;
+    height:450px;
+    width: 450px;
 }
 .content .actions {
-    height:100%;
-    width:20%;
-    float:left;
-    padding:120px 0px;
+    height:80px;
+    width:450px;
 }
 
 .camera-hover {
@@ -68,4 +65,34 @@ div {
 
 .hidden {
     display: none !important;
+}
+
+.button__take-photo,
+.actions .button{
+    position: relative;
+    margin:20px auto;
+    padding: 20px 0px;
+    text-align:center;
+    font-size:30px;
+    max-width: 215px;
+}
+
+.actions .button {
+    padding-right: 15px;
+    background-repeat: no-repeat;
+    background-position: center right;
+}
+
+.actions .button.button__take-photo {
+    padding-right: 0px;
+}
+
+.actions .js-person-back-btn {
+    float:left;
+    background-image: url('/images/cancel.png');
+}
+
+.actions .js-person-save-btn {
+    float:right;
+    background-image: url('/images/ok.png');
 }
