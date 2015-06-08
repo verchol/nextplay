@@ -17,6 +17,18 @@ div {
     display: block;
 }
 
+h1 {
+    text-align: center;
+    font-family: Arial;
+    font-size: 40px;
+}
+
+@media screen and (max-height: 680px){
+    h1 {
+        display: none;
+    }
+}
+
 .content .image {
     height:450px;
     width: 450px;
