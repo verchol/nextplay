@@ -7,6 +7,8 @@ $(function() {
   var photo;
 
   function onTakePhoto() {
+	  
+    $('.js-take-photo-btn').unbind( "click" );
     $('.js-take-photo-btn')
       .html('3')
       .delay(800)
@@ -92,6 +94,8 @@ $(function() {
 
   function showThanksPage() {
     $thanks.removeClass('hidden');
+    $("h1").hide();
+    
   }
 
   $('#js-camera').scriptcam({
