@@ -20,7 +20,7 @@ div {
 h1 {
     text-align: center;
     font-family: Arial;
-    font-size: 40px;
+    font-size: 10px;
 }
 
 @media screen and (max-height: 680px){
