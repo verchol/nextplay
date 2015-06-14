@@ -16,11 +16,8 @@ function rename(req, res)
 
    ip = remoteIp[remoteIp.length - 1];
    var ips = ip.split('.');
-   ip = ips[ips.length - 1];
-
-   console.log('remote ip' + remoteIp[remoteIp.length - 1]);
-   console.log("ip:" + ip);
-   
+   ip = ips[ips.length - 1] + "";
+   ip = ip.substr(ip.length-2, 2);
    
    return ip;
 
