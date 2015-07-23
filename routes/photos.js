@@ -12,7 +12,6 @@ function rename(req, res) {
         req.socket.remoteAddress ||
         req.connection.socket.remoteAddress;
 
-
     var remoteIp = ip.split(':');
 
     ip = remoteIp[remoteIp.length - 1];
@@ -21,6 +20,10 @@ function rename(req, res) {
     ip = ips[ips.length - 1] + "";
     ip = ip.substr(ip.length - 2, 2);
 
+    if(parseInt(ip) < 10) {
+        // fix leading zero bug
+        ip = parseInt(ip) + "";
+    }
     return ip;
 
 }

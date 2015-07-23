@@ -27,3 +27,5 @@ build/Release
 node_modules
 routes/photos/*.png
 #public/bower_components
+
+.idea
